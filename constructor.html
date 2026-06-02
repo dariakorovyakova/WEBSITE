@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Свой дизайн — DROP LAB</title>
+  <meta name="description" content="Конструктор кастомного мерча DROP LAB: выбери вещь, цвет и надпись — собери свой дизайн." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/styles.css" />
+</head>
+<body>
+  <header class="header">
+    <div class="container header__inner">
+      <a href="index.html" class="brand"><span class="brand__mark">DL</span> DROP LAB</a>
+      <nav class="nav" data-nav aria-label="Главное меню">
+        <ul class="nav__list">
+          <li><a href="new.html" class="nav__link">Новинки</a></li>
+          <li><a href="catalog.html" class="nav__link">Продукты</a></li>
+          <li><a href="contacts.html" class="nav__link">Контакты</a></li>
+        </ul>
+      </nav>
+      <div class="header__actions">
+        <a href="cart.html" class="icon-btn" aria-label="Корзина">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/></svg>
+          <span class="cart-badge" data-cart-badge>0</span>
+        </a>
+        <button class="icon-btn" aria-label="Профиль" data-modal-open="modal-login">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+        </button>
+        <button class="burger" data-burger aria-label="Меню"><span></span><span></span><span></span></button>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <div class="container">
+      <nav class="breadcrumbs"><a href="index.html">Главная</a> / Свой дизайн</nav>
+    </div>
+    <section class="page-hero">
+      <div class="container">
+        <h1>Создай свой дизайн</h1>
+        <p>Собери кастомную вещь: выбери модель, цвет и надпись — мы изготовим под заказ.</p>
+      </div>
+    </section>
+
+    <section class="section" style="padding-top:32px;">
+      <div class="container">
+        <div class="constructor">
+          <!-- Превью -->
+          <div class="preview" data-preview style="background:#f5f5f5;">
+            <div class="preview__item" data-preview-item>
+              <svg class="preview__garment" data-garment viewBox="0 0 200 200" aria-hidden="true"></svg>
+              <span class="preview__text" data-preview-text>DROP LAB</span>
+            </div>
+          </div>
+
+          <!-- Управление -->
+          <div class="form-card" data-constructor-wrap>
+            <h2>Параметры</h2>
+            <p>Меняй настройки — превью обновляется в реальном времени.</p>
+            <form data-constructor-form novalidate>
+              <div class="field">
+                <label>Модель</label>
+                <div class="chip-row" data-model>
+                  <button type="button" class="chip is-active" data-value="Футболка" data-price="2490">Футболка</button>
+                  <button type="button" class="chip" data-value="Худи" data-price="6490">Худи</button>
+                  <button type="button" class="chip" data-value="Сумка" data-price="2990">Сумка</button>
+                </div>
+              </div>
+
+              <div class="field">
+                <label>Цвет вещи</label>
+                <div class="swatches" data-base-color>
+                  <button type="button" class="swatch is-active" data-color="#171717" style="background:#171717;" aria-label="Чёрный"></button>
+                  <button type="button" class="swatch" data-color="#ffffff" style="background:#ffffff;" aria-label="Белый"></button>
+                  <button type="button" class="swatch" data-color="#9aa0a6" style="background:#9aa0a6;" aria-label="Серый"></button>
+                  <button type="button" class="swatch" data-color="#1c7a4d" style="background:#1c7a4d;" aria-label="Зелёный"></button>
+                  <button type="button" class="swatch" data-color="#7a1f1f" style="background:#7a1f1f;" aria-label="Бордовый"></button>
+                </div>
+              </div>
+
+              <div class="field">
+                <label>Цвет надписи</label>
+                <div class="swatches" data-text-color>
+                  <button type="button" class="swatch is-active" data-color="#ffffff" style="background:#ffffff;" aria-label="Белый"></button>
+                  <button type="button" class="swatch" data-color="#171717" style="background:#171717;" aria-label="Чёрный"></button>
+                  <button type="button" class="swatch" data-color="#ffd400" style="background:#ffd400;" aria-label="Жёлтый"></button>
+                  <button type="button" class="swatch" data-color="#ff4d4d" style="background:#ff4d4d;" aria-label="Красный"></button>
+                </div>
+              </div>
+
+              <div class="field">
+                <label for="con-text">Надпись (до 16 символов)</label>
+                <input type="text" id="con-text" maxlength="16" value="DROP LAB" data-text-input placeholder="Ваш текст" />
+                <span class="field__error"></span>
+              </div>
+
+              <div class="summary__row summary__row--total" style="border:none; padding:8px 0; margin:0;">
+                <span>Цена</span><span data-con-price>2 490 ₽</span>
+              </div>
+
+              <button type="submit" class="btn btn--primary btn--block" style="margin-top:12px;">В корзину</button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer__cols">
+        <div class="footer__brand">
+          <span class="footer__logo">DROP&nbsp;LAB</span>
+          <p>Вещи под склад. Стрит-лаборатория мерча и кастомного дизайна.</p>
+          <div class="footer__social"><a href="#" title="VK">VK</a><a href="#" title="Telegram">TG</a><a href="#" title="Instagram">IG</a></div>
+        </div>
+        <div class="footer__col"><h4>О Бренде</h4><ul><li><a href="index.html#about">О Бренде</a></li><li><a href="retailers.html">Официальные ритейлеры</a></li></ul></div>
+        <div class="footer__col"><h4>Контакты</h4><ul><li><a href="contacts.html">Контакты</a></li><li><a href="#">VK</a></li><li><a href="#">Telegram</a></li><li><a href="mailto:info@droplab.ru">info@droplab.ru</a></li></ul></div>
+        <div class="footer__col"><h4>Покупателям</h4><ul><li><a href="delivery.html">Доставка и Оплата</a></li><li><a href="returns.html">Возврат</a></li></ul></div>
+      </div>
+      <div class="footer__bottom">
+        <span>© <span data-year>2026</span> DROP LAB. Все права защищены.</span>
+      </div>
+    </div>
+  </footer>
+
+  <div class="modal" id="modal-login" role="dialog" aria-modal="true" aria-labelledby="login-title">
+    <div class="modal__overlay"></div>
+    <div class="modal__dialog">
+      <button class="modal__close" data-modal-close aria-label="Закрыть">✕</button>
+      <h2 class="modal__title" id="login-title">Вход в аккаунт</h2>
+      <p class="modal__sub">Демо-форма. Личный кабинет появится в следующем дропе.</p>
+      <form data-request-form novalidate>
+        <div class="field"><label for="l-email">Email</label><input type="email" id="l-email" required placeholder="you@mail.ru" /><span class="field__error"></span></div>
+        <div class="field"><label for="l-pass">Пароль</label><input type="password" id="l-pass" required placeholder="••••••••" /><span class="field__error"></span></div>
+        <button type="submit" class="btn btn--primary btn--block">Войти</button>
+      </form>
+    </div>
+  </div>
+
+  <script src="js/products.js"></script>
+  <script src="js/main.js"></script>
+  <script src="js/constructor.js"></script>
+</body>
+</html>
